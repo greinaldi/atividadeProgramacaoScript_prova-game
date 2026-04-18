@@ -8,6 +8,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "deploy": "gh-pages -d out"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
   }
 }
