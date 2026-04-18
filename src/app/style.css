@@ -1,0 +1,111 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    font-family: sans-serif;
+}
+
+.character {
+    color: #282828;
+    background-color: lightgray;
+    border: 2px solid #648bc9;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    width: 300px; /* Largura fixa para manter o alinhamento */
+}
+
+.actions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #648bc9;
+    color: white;
+    cursor: pointer;
+    margin: 5px;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+button:hover {
+    background-color: #345a91;
+}
+
+button:active {
+    transform: translateY(2px);
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    color: #666;
+}
+
+.life-bar {
+    position: relative;
+    height: 30px;
+    background-color: #d72929;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    border: 1px solid #282828;
+}
+
+.life-fill {
+    background-color: #489b34;
+    height: 100%;
+    transition: width 0.5s ease;
+}
+
+.life-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    line-height: 30px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+}
+
+/* --- ALTERAÇÕES PARA AS IMAGENS --- */
+
+.sprite {
+    height: 250px;
+    background-color: #7c7c7c; /* Cor de fundo caso a imagem falhe */
+    border-radius: 5px;
+    background-size: contain;      /* Ajusta a imagem sem esticar */
+    background-position: center;   /* Centraliza o personagem */
+    background-repeat: no-repeat;  /* Não repete a imagem */
+    font-size: 0;                  /* ESCONDE O TEXTO "Desenho Personagem" */
+    margin-bottom: 10px;
+}
+
+/* Imagem para o Herói (Guerreiro) */
+.character:first-of-type .sprite {
+    background-image: url('/guerreiro.png');
+    background-color: #e0e0e0; /* Fundo um pouco mais claro para o herói */
+}
+
+/* Imagem para o Vilão (Goblin) */
+.character:last-of-type .sprite {
+    background-image: url('/goblin.png');
+    background-color: #cfcfcf; /* Fundo diferente para o vilão */
+}
+
+/* Estilo para a mensagem de log no topo */
+h2 {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    text-align: center;
+}
